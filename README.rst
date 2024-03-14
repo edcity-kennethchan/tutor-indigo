@@ -46,8 +46,14 @@ This plugin can serve as a starting point to create your own themes. Just fork t
 
 You will have to start by installing indigo from source::
 
+    Official steps
     git clone https://github.com/overhangio/tutor-indigo.git
     pip install -e ./tutor-indigo
+    tutor plugins enable indigo
+
+    My own steps
+    git clone https://github.com/edcity-kennethchan/tutor-indigo.git
+    sudo pip3 install -e ./tutor-indigo
     tutor plugins enable indigo
 
 Any change you make to the theme can be viewed immediately in development mode (with `tutor dev ...` commands) after you run::
@@ -58,6 +64,18 @@ To deploy your changes to production, you will have to rebuild the "openedx" Doc
 
     tutor images build openedx
     tutor local start -d
+
+Remark: cannot use tutor images push openedx, instead use the followings:
+    docker tag existent_image_name:latest your_user_name/new_image_name:latest
+    docker push your_user_name/new_image:latest
+
+For example,
+    docker login
+    docker images
+    docker tag overhangio/openedx-mfe:17.0.0-indigo kingfungc626/openedx:17.0.0-indigo
+    sudo push kingfungc626/openedx:17.0.0-indigo
+
+Important! The rebuild image only live in your local Docker Desktop. You need to push image into your own docker.io repo under yr account. In order to make tutor openedx to use yr customized image, please edit tutor config.yml
 
 Changing the Styling in Sass files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
