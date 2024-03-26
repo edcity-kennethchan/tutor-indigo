@@ -66,7 +66,17 @@ To deploy your changes to production, you will have to rebuild the "openedx" Doc
     pwd (/home/openedx)
     cd tutor-indigo
     git pull https://github.com/edcity-kennethchan/tutor-indigo.git
+    
+    In config.yml
+    Add DOCKER_IMAGE_OPENEDX: docker.io/kingfungc626/openedx:17.0.2-indigo
+
+    cd
+    docker login (kingfungc626 / pwd)
     tutor images build openedx
+    tutor images push openedx
+    
+    Check https://hub.docker.com/repository/docker/kingfungc626/openedx/general
+
     tutor local start -d
 
 Remark: cannot use tutor images push openedx, instead use the followings:
