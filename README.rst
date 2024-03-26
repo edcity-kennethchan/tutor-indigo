@@ -51,7 +51,7 @@ You will have to start by installing indigo from source::
     pip install -e ./tutor-indigo
     tutor plugins enable indigo
 
-    My own steps
+    My step
     git clone https://github.com/edcity-kennethchan/tutor-indigo.git
     sudo pip3 install -e ./tutor-indigo
     tutor plugins enable indigo
@@ -62,6 +62,8 @@ Any change you make to the theme can be viewed immediately in development mode (
 
 To deploy your changes to production, you will have to rebuild the "openedx" Docker image and restart your containers::
 
+    My step
+    git pull https://github.com/edcity-kennethchan/tutor-indigo.git
     tutor images build openedx
     tutor local start -d
 
