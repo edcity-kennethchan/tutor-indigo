@@ -61,7 +61,6 @@ from openedx.core.djangolib.markup import HTML, Text
 % endif
 
 <%block name="js_extra">
-   <script src="https://unpkg.com/ag-grid-community@26.2.1/dist/ag-grid-community.min.js"></script>
    <script type="text/javascript">
       console.log("<-- Indigo theme template index.html: js_extra block -->");
       $(document).ready(function() {
@@ -74,8 +73,6 @@ from openedx.core.djangolib.markup import HTML, Text
          }
       })
    </script>
-   <script src="https://unpkg.com/papaparse@5.3.0/papaparse.min.js"></script>
-   <script src="https://unpkg.com/faker@5.5.3/dist/faker.min.js"></script>
 </%block>
 
 % if show_signup_immediately is not UNDEFINED:
