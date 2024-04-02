@@ -72,7 +72,9 @@ To deploy your changes to production, you will have to rebuild the "openedx" Doc
 
     cd
     docker login (kingfungc626 / pwd)
-    tutor images build openedx
+    tutor images build openedx 
+    OR 
+    tutor images build openedx --build-arg EDX_PLATFORM_REPOSITORY=https://github.com/edcity-kennethchan/edx-platform.git --build-arg EDX_PLATFORM_VERSION=open-release/quince.2.2 
     tutor images push openedx
     
     Check https://hub.docker.com/repository/docker/kingfungc626/openedx/general
