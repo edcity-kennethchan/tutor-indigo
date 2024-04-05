@@ -70,9 +70,13 @@ To deploy your changes to production, you will have to rebuild the "openedx" Doc
     In config.yml
     Add DOCKER_IMAGE_OPENEDX: docker.io/kingfungc626/openedx:17.0.2-indigo
 
+    Need to commit a change and then add a tag in branch https://github.com/edcity-kennethchan/edx-platform/tree/open-release/quince.2.X
+    If previous tag open-release/quince.2.2
+    Then commit a change and add tag open-release/quince.2.3
+
     cd
     docker login (kingfungc626 / pwd)
-    tutor images build openedx
+    tutor images build openedx 
     tutor images push openedx
     
     Check https://hub.docker.com/repository/docker/kingfungc626/openedx/general
