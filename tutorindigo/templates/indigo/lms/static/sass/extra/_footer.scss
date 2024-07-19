@@ -40,7 +40,7 @@ footer.tutor-container {
         li {
             display: inline-block;
             vertical-align: middle;
-            padding: 0 5px;
+            padding: 0 10px;
             letter-spacing: normal;
             position: relative;
             font-size: 12px;
@@ -49,19 +49,26 @@ footer.tutor-container {
             &:first-child {
                 padding-left: 0;
             }
-            &:last-child {
-                padding-left: 20px;
-                &:after {
-                    position: absolute;
-                    left: 5px;
-                    top: 50%;
-                    content: "";
-                    width: 1px;
-                    height: 29px;
-                    margin: -14px 0 0;
-                    background: #6B7280;;
+            &:not(:first-child) {
+                &::before {
+                    content: "|";
+                    padding: 0 8px;
                 }
             }
+            //remove li:last-child:after
+            //&:last-child {
+            //    padding-left: 20px;
+            //    &:after {
+            //        position: absolute;
+            //        left: 5px;
+            //        top: 50%;
+            //        content: "";
+            //        width: 1px;
+            //        height: 29px;
+            //        margin: -14px 0 0;
+            //        background: #6B7280;;
+            //    }
+            //}
         }
     }
     .nav-colophon {
