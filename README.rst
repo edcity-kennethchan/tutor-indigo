@@ -68,20 +68,22 @@ To deploy your changes to production, you will have to rebuild the "openedx" Doc
     git pull https://github.com/edcity-kennethchan/tutor-indigo.git
     
     In config.yml
-    Add DOCKER_IMAGE_OPENEDX: docker.io/kingfungc626/openedx:17.0.2-indigo
+    Add DOCKER_IMAGE_OPENEDX: docker.io/kingfungc626/openedx:17.0.6-indigo
 
-    Need to commit a change and then add a tag in branch https://github.com/edcity-kennethchan/edx-platform/tree/open-release/quince.2.X
-    If previous tag open-release/quince.2.2
-    Then commit a change and add tag open-release/quince.2.3
+    Need to commit a change and then add a tag in branch https://github.com/edcity-kennethchan/edx-platform/tree/open-release/quince.2.4.4
+    If previous tag open-release/quince.2.4.3
+    Then commit a change and add tag open-release/quince.2.4.4
+    Then push
 
     cd
-    docker login (kingfungc626 / pwd)
-    tutor images build openedx 
+    docker login
+    tutor images build openedx --build-arg EDX_PLATFORM_REPOSITORY=https://github.com/edcity-kennethchan/edx-platform.git --build-arg EDX_PLATFORM_VERSION=open-release/quince.2.4.4 --no-cache 
     tutor images push openedx
     
-    Check https://hub.docker.com/repository/docker/kingfungc626/openedx/general
-
-    tutor local start -d
+    Checking with https://hub.docker.com/repository/docker/kingfungc626/openedx/general
+    
+    tutor k8s stop
+    tutor k8s launch -I
 
 Remark: cannot use tutor images push openedx, instead use the followings:
     docker tag existent_image_name:latest your_user_name/new_image_name:latest
